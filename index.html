@@ -270,78 +270,7 @@ gap:12px;border-bottom:1px solid var(--line);padding:12px 0}
 const ADMIN_PASSWORD = "ChangeThis123!";
 
 const starterProducts = [
- {id:"p1",name:"مۆبایلی زیرەک",price:350000,category:"مۆبایل",
-  description:"مۆبایلێک بۆ بەکارهێنانی ڕۆژانە.",image:"https://placehold.co/500x400/f0f2f6/172033?text=Smartphone"},
- {id:"p2",name:"لەپتۆپ",price:850000,category:"کۆمپیوتەر",
-  description:"گونجاو بۆ خوێندن و کار.",
-  image:"https://placehold.co/500x400/f0f2f6/172033?text=Laptop"},
- {id:"p3",name:"کاتژمێری زیرەک",price:75000,category:"ئەلیکترۆنیات",
-  description:"کاتژمێرێک بۆ ڕۆژانە.",
-  image:"https://placehold.co/500x400/f0f2f6/172033?text=Smart+Watch"},
- {id:"p4",name:"گوێگر",price:45000,category:"ئەلیکترۆنیات",
-  description:"گوێگرێک بۆ گوێگرتن لە مۆسیقا.",
- 
-  id: "p5",
-  name: "Samsung Galaxy S25",
-  price: 750000,
-  category: "مۆبایل",
-  description: "مۆبایلی سامسۆنگ",
-  image: "https://placehold.co/500x400/ffffff/172033?text=Samsung+S25"
-},
-{
-  id: "p6",
-  name: "iPhone 16 Pro",
-  price: 1250000,
-  category: "مۆبایل",
-  description: "مۆبایلی ئایفۆن",
-  image: "https://placehold.co/500x400/ffffff/172033?text=iPhone+16+Pro"
-},
-{
-  id: "p7",
-  name: "Gaming Mouse",
-  price: 35000,
-  category: "کۆمپیوتەر",
-  description: "ماوسی تایبەت بە گەیمینگ",
-  image: "https://placehold.co/500x400/ffffff/172033?text=Gaming+Mouse"
-},
-{
-  id: "p8",
-  name: "Keyboard",
-  price: 55000,
-  category: "کۆمپیوتەر",
-  description: "کیبۆردی کۆمپیوتەر",
-  image: "https://placehold.co/500x400/ffffff/172033?text=Keyboard"
-}
-];
 
-function loadProducts(){
- try{
-  const saved=localStorage.getItem("saferStoreProducts");
-  if(saved){
-   const parsed=JSON.parse(saved);
-   if(Array.isArray(parsed)) return parsed;
-  }
- }catch(e){console.error(e)}
- return starterProducts.map(p=>({...p}));
-}
-let items=loadProducts();
-let cart={};
-
-function persist(){
- try{
-  localStorage.setItem("saferStoreProducts",JSON.stringify(items));
-  return true;
- }catch(e){
-  alert("داتا پاشەکەوت نەکرا. وێنەکە زۆر گەورەیە یان شوێنی هەڵگرتن پڕە. وێنەیەکی بچووکتر بەکاربهێنە.");
-  return false;
- }
-}
-function money(n){return Number(n).toLocaleString("en-US")+" د.ع"}
-function safeText(v){return String(v??"")}
-function renderProducts(){
- const query=document.getElementById("search").value.trim().toLocaleLowerCase();
- const category=document.getElementById("categoryFilter").value;
- let shown=items.filter(p=>
   p.name.toLocaleLowerCase().includes(query) &&
   (!category||p.category===category)
  );
@@ -517,7 +446,7 @@ renderProducts();updateCart();
     <a safarsherzad45@gmail.com>نامەمان بۆ بنێرە</a>
   </p>
 
-  <a href="https://wa.me/964750XXXXXXX"
+  <a safarsherzad45@gmail.com
      style="display:inline-block;background:#25D366;color:white;padding:12px 20px;border-radius:8px;text-decoration:none;">
     پەیوەندی لە WhatsApp
   </a>
